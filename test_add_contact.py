@@ -11,9 +11,10 @@ class TestContactAdd(unittest.TestCase):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
 
-    def test_contact_add(self):
-        wd = self.wd
+    def open_home_page(self, wd):
         wd.get("http://localhost/addressbook/index.php")
+
+    def login(self, wd):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
@@ -21,7 +22,11 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//input[@value='Login']").click()
+
+    def create_contact(self, wd):
+        # Init contact creation
         wd.find_element_by_link_text("add new").click()
+        # Fill main fields in contact form
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys("Homer")
@@ -68,6 +73,7 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("homepage").click()
         wd.find_element_by_name("homepage").clear()
         wd.find_element_by_name("homepage").send_keys("facebook.com")
+        # Select day, month and year of birth
         wd.find_element_by_name("bday").click()
         Select(wd.find_element_by_name("bday")).select_by_visible_text("10")
         wd.find_element_by_xpath("//option[@value='10']").click()
@@ -77,6 +83,7 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
         wd.find_element_by_name("byear").send_keys("1959")
+        # Select day, month and year of anniversary
         wd.find_element_by_name("aday").click()
         Select(wd.find_element_by_name("aday")).select_by_visible_text("10")
         wd.find_element_by_xpath("(//option[@value='10'])[2]").click()
@@ -86,6 +93,7 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("ayear").click()
         wd.find_element_by_name("ayear").clear()
         wd.find_element_by_name("ayear").send_keys("2019")
+        # Fill secondary information
         wd.find_element_by_name("address2").click()
         wd.find_element_by_name("address2").clear()
         wd.find_element_by_name("address2").send_keys("Something")
@@ -95,9 +103,22 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys("Best friend")
+        # Submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+
+    def return_to_home_page(self, wd):
         wd.find_element_by_link_text("home page").click()
+
+    def logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
+
+    def test_contact_add(self):
+        wd = self.wd
+        self.open_home_page(wd)
+        self.login(wd)
+        self.create_contact(wd)
+        self.return_to_home_page(wd)
+        self.logout(wd)
 
     def is_element_present(self, how, what):
         try:

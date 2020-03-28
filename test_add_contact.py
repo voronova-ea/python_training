@@ -12,11 +12,13 @@ class TestContactAdd(unittest.TestCase):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
 
-    def open_home_page(self, wd):
+    def open_home_page(self):
+        wd = self.wd
         wd.get("http://localhost/addressbook/index.php")
 
-    def login(self, wd):
-        self.open_home_page(wd)
+    def login(self):
+        wd = self.wd
+        self.open_home_page()
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
@@ -25,7 +27,8 @@ class TestContactAdd(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
-    def create_contact(self, wd, contact):
+    def create_contact(self, contact):
+        wd = self.wd
         # Init contact creation
         wd.find_element_by_link_text("add new").click()
         # Fill main fields in contact form
@@ -107,31 +110,31 @@ class TestContactAdd(unittest.TestCase):
         # Submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         # return to home page
-        self.return_to_home_page(wd)
+        self.return_to_home_page()
 
-    def return_to_home_page(self, wd):
+    def return_to_home_page(self):
+        wd = self.wd
         wd.find_element_by_link_text("home page").click()
 
-    def logout(self, wd):
+    def logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
     def test_contact_add(self):
-        wd = self.wd
-        self.login(wd)
-        self.create_contact(wd, Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy", title="Some",
+        self.login()
+        self.create_contact(Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy", title="Some",
                        company="NPS", address="Springfield", home="027220", mobile="567890", work="026789", fax="026790",
                        email1="h.simpson@gmail.com", email2="h.simpson@somemail.com", email3="h.simpson@someelsemail.com",
                        homepage="facebook.com", bday="10", bmonth="May", byear="1959", aday="10", amonth="May", ayear="2019",
                        address2="Something", phone2="007", notes="Best friend"))
-        self.logout(wd)
+        self.logout()
 
     def test_empty_contact_add(self):
-        wd = self.wd
-        self.login(wd)
-        self.create_contact(wd, Contact(firstname="", middlename="", lastname="", nickname="", title="", company="", address="",
+        self.login()
+        self.create_contact(Contact(firstname="", middlename="", lastname="", nickname="", title="", company="", address="",
                        home="", mobile="", work="", fax="", email1="", email2="", email3="", homepage="", bday="",
                        bmonth="-", byear="", aday="", amonth="-", ayear="", address2="", phone2="", notes=""))
-        self.logout(wd)
+        self.logout()
 
     def is_element_present(self, how, what):
         try:

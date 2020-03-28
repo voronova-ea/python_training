@@ -87,4 +87,4 @@ class ContactHelper:
         # Submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         # return to home page
-        self.app.return_to_home_page()
+        self.app.navigation.return_to_home_page()

@@ -31,6 +31,7 @@ class GroupHelper:
         self.open_groups_page()
         # select group
         wd.find_element_by_name("selected[]").click()
+        # init group editing
         wd.find_element_by_name("edit").click()
         # edit group form
         wd.find_element_by_name("group_name").click()

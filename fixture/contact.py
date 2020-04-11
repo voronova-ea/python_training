@@ -108,6 +108,9 @@ class ContactHelper:
         self.app.navigation.open_home_page_by_button()
         contacts = []
         for element in wd.find_elements_by_css_selector("[name='entry']"):
+            lastname = element.find_element_by_xpath("//tr["+str(len(contacts)+2)+"]/td[2]").text
+            firstname = element.find_element_by_xpath("//tr["+str(len(contacts)+2)+"]/td[3]").text
+            address = element.find_element_by_xpath("//tr["+str(len(contacts)+2)+"]/td[4]").text
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(id=id))
+            contacts.append(Contact(firstname=firstname, lastname=lastname, address=address, id=id))
         return contacts

@@ -62,14 +62,17 @@ class ContactHelper:
         self.app.navigation.return_to_home_page()
         self.contact_cache = None
 
-    def open_edit_form(self):
+    def open_edit_form(self, index):
         wd = self.app.wd
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
 
     def edit_first_contact(self, contact):
+        self.edit_contact_by_index(0, contact)
+
+    def edit_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
-        self.open_edit_form()
+        self.open_edit_form(index)
         self.fill_form(contact)
         # Submit contact editing
         wd.find_element_by_xpath("(//input[@value='Update'])").click()
@@ -78,10 +81,13 @@ class ContactHelper:
         self.contact_cache = None
 
     def delete_first_contact_from_main_page(self):
+        self.delete_by_index_from_main_page(0)
+
+    def delete_by_index_from_main_page(self, index):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
         # select first contact
-        wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
         # init deletion
         wd.find_element_by_xpath("(//input[@value='Delete'])").click()
         # submit deletion
@@ -91,9 +97,12 @@ class ContactHelper:
         self.contact_cache = None
 
     def delete_first_contact_from_edit_form(self):
+        self.delete_by_index_from_edit_form(0)
+
+    def delete_by_index_from_edit_form(self, index):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
-        self.open_edit_form()
+        self.open_edit_form(index)
         # submit deletion from edit form
         wd.find_element_by_xpath("(//input[@value='Delete'])").click()
         self.contact_cache = None

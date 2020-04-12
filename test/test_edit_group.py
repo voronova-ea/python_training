@@ -4,9 +4,13 @@ from model.group import Group
 def test_group_edit_all_fields(app):
     app.group.check(Group(name="name", header="header", footer="footer"))
     old_groups = app.group.get_group_list()
-    app.group.edit_first_group(Group(name="new name", header="new header", footer="new footer"))
+    group = Group(name="new name", header="new header", footer="new footer")
+    group.id = old_groups[0].id
+    app.group.edit_first_group(group)
     new_groups = app.group.get_group_list()
     assert len(old_groups) == len(new_groups)
+    old_groups[0] = group
+    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
 def test_group_edit_all_fields_empty(app):

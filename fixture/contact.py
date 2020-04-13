@@ -123,10 +123,12 @@ class ContactHelper:
             wd = self.app.wd
             self.app.navigation.open_home_page_by_button()
             self.contact_cache = []
-            for element in wd.find_elements_by_css_selector("[name='entry']"):
-                lastname = element.find_element_by_xpath("//tr[" + str(len(self.contact_cache) + 2) + "]/td[2]").text
-                firstname = element.find_element_by_xpath("//tr[" + str(len(self.contact_cache) + 2) + "]/td[3]").text
-                address = element.find_element_by_xpath("//tr[" + str(len(self.contact_cache) + 2) + "]/td[4]").text
-                id = element.find_element_by_name("selected[]").get_attribute("value")
+            rows = wd.find_elements_by_name("entry")
+            for row in rows:
+                cells = row.find_elements_by_tag_name("td")
+                lastname = cells[1].text
+                firstname = cells[2].text
+                address = cells[3].text
+                id = cells[0].find_element_by_name("selected[]").get_attribute("value")
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, address=address, id=id))
         return list(self.contact_cache)

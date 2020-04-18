@@ -93,7 +93,7 @@ class ContactHelper:
         # submit deletion
         wd.switch_to_alert().accept()
         # wait message about deletion
-        wd.find_element_by_xpath("//div[@id='content']/div[@class='msgbox']")
+        wd.find_element_by_xpath("//div[@class='msgbox']")
         self.contact_cache = None
 
     def delete_first_contact_from_edit_form(self):

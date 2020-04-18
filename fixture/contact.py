@@ -140,9 +140,11 @@ class ContactHelper:
                 firstname = cells[2].text
                 address = cells[3].text
                 id = cells[0].find_element_by_name("selected[]").get_attribute("value")
+                all_emails = cells[4].text
                 all_phones = cells[5].text
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, address=address, id=id,
-                                                  all_phones_from_hom_pages=all_phones))
+                                                  all_emails_from_home_page=all_emails,
+                                                  all_phones_from_home_page=all_phones))
         return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
@@ -156,15 +158,52 @@ class ContactHelper:
         work = wd.find_element_by_name("work").get_attribute("value")
         mobile = wd.find_element_by_name("mobile").get_attribute("value")
         phone2 = wd.find_element_by_name("phone2").get_attribute("value")
+        email1 = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         return Contact(id=id, firstname=firstname, lastname=lastname, address=address, home=home, work=work,
-                       mobile=mobile, phone2=phone2)
+                       mobile=mobile, phone2=phone2, email1=email1, email2=email2, email3=email3)
 
     def get_contact_info_from_view_page(self, index):
         wd = self.app.wd
         self.open_contact_view_form_by_index(index)
         text = wd.find_element_by_id("content").text
-        home = re.search("H: (.*)", text).group(1)
-        mobile = re.search("M: (.*)", text).group(1)
-        work = re.search("W: (.*)", text).group(1)
-        phone2 = re.search("P: (.*)", text).group(1)
+        _home = re.search("H: (.*)", text)
+        if _home is not None:
+            home = _home.group(1)
+        else:
+            home = ""
+        _mobile = re.search("M: (.*)", text)
+        if _mobile is not None:
+            mobile = _mobile.group(1)
+        else:
+            mobile = ""
+        _work = re.search("W: (.*)", text)
+        if _work is not None:
+            work = _work.group(1)
+        else:
+            work = ""
+        _phone2 = re.search("P: (.*)", text)
+        if _phone2 is not None:
+            phone2 = _phone2.group(1)
+        else:
+            phone2 = ""
         return Contact(home=home, work=work, mobile=mobile, phone2=phone2)
+
+    def clear(self, s):
+        return re.sub("[() -]", "", s)
+
+    def remove_end_or_begin_spaces(self, s):
+        return re.sub('^[ \t]+|[ \t]+$', "", s)
+
+    def merge_phones_like_on_home_page(self, contact):
+        return "\n".join(filter(lambda x: x != "",
+                                map(lambda x: self.clear(x),
+                                    filter(lambda x: x is not None,
+                                           [contact.home, contact.mobile, contact.work, contact.phone2]))))
+
+    def merge_emails_like_on_home_page(self, contact):
+        return "\n".join(filter(lambda x: x != "",
+                                map(lambda x: self.remove_end_or_begin_spaces(x),
+                                    filter(lambda x: x is not None,
+                                           [contact.email1, contact.email2, contact.email3]))))

@@ -18,7 +18,7 @@ def test_contact_fields_value_on_home_page(app):
     assert contact_from_home_page.id == contact_from_edit_page.id
     assert contact_from_home_page.firstname == contact_from_edit_page.firstname
     assert contact_from_home_page.lastname == contact_from_edit_page.lastname
-    assert contact_from_home_page.address == contact_from_edit_page.address
+    assert contact_from_home_page.address == app.contact.remove_end_or_begin_spaces(contact_from_edit_page.address)
     assert contact_from_home_page.all_phones_from_home_page == app.contact.merge_phones_like_on_home_page(contact_from_edit_page)
     assert contact_from_home_page.all_emails_from_home_page == app.contact.merge_emails_like_on_home_page(contact_from_edit_page)
 

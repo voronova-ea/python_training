@@ -1,29 +1,46 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
+import pytest
+import random
+import string
+import re
 
 
-def test_contact_add(app):
+def random_string(prefix, maxlen):
+    symbols = string.ascii_letters + string.digits + string.punctuation + " " * 10
+    return prefix + re.sub("[:'`<>]", "", "".join([random.choice(symbols) for _ in range(random.randrange(maxlen))]))
+
+
+def random_number(maxlen):
+    symbols = string.digits + "-()" + " " * 10
+    return "".join([random.choice(symbols) for _ in range(random.randrange(maxlen))])
+
+
+months = ["-", "January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+testdata = [Contact(firstname="", middlename="", lastname="", nickname="", title="", company="",
+                    address="", home="", mobile="", work="", fax="", email1="", email2="", email3="",
+                    homepage="", bday="", bmonth="-", byear="", aday="", amonth="-", ayear="", address2="",
+                    phone2="", notes="")] + \
+           [Contact(firstname=random_string("firstname", 10), middlename=random_string("middlename", 10),
+                    lastname=random_string("lastname", 15), nickname=random_string("nickname", 10),
+                    title=random_string("title", 20), company=random_string("company", 30),
+                    address=random_string("address", 30), home=random_number(11),
+                    mobile=random_number(11), work=random_number(11), fax=random_number(11),
+                    email1=random_string("email1", 25), email2=random_string("email2", 25),
+                    email3=random_string("email3", 25), homepage=random_string("homepage", 25),
+                    bday=str(random.randrange(1, 32)), bmonth=str(months[random.randrange(len(months))]),
+                    byear=str(random.randrange(3000)), aday=str(random.randrange(1, 32)),
+                    amonth=str(months[random.randrange(len(months))]), ayear=str(random.randrange(3000)),
+                    address2=random_string("address2", 30), phone2=random_number(11),
+                    notes=random_string("notes", 30))
+            for _ in range(5)]
+
+
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
+def test_contact_add(app, contact):
     old_contacts = app.contact.get_contact_list()
-    contact = Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
-                      title="Some", company="NPS", address="Springfield", home="027220", mobile="567890",
-                      work="026789", fax="026790", email1="h.simpson@gmail.com",
-                      email2="h.simpson@somemail.com",
-                      email3="h.simpson@someelsemail.com", homepage="facebook.com", bday="10", bmonth="May",
-                      byear="1959", aday="10", amonth="May", ayear="2019", address2="Something", phone2="070",
-                      notes="Best friend")
-    app.contact.create(contact)
-    assert len(old_contacts) + 1 == app.contact.count()
-    new_contacts = app.contact.get_contact_list()
-    old_contacts.append(contact)
-    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-
-
-def test_empty_contact_add(app):
-    old_contacts = app.contact.get_contact_list()
-    contact = Contact(firstname="", middlename="", lastname="", nickname="", title="", company="",
-                      address="", home="", mobile="", work="", fax="", email1="", email2="", email3="",
-                      homepage="", bday="", bmonth="-", byear="", aday="", amonth="-", ayear="", address2="",
-                      phone2="", notes="")
     app.contact.create(contact)
     assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()

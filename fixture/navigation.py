@@ -5,7 +5,7 @@ class NavigationHelper:
     def open_home_page_by_url(self):
         wd = self.app.wd
         if not (len(wd.find_elements_by_xpath("(//input[@value='Send e-Mail'])")) > 0):
-            wd.get("http://localhost/addressbook/")
+            wd.get(self.app.base_url)
 
     def open_home_page_by_button(self):
         wd = self.app.wd

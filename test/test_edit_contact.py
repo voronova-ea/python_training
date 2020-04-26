@@ -2,8 +2,8 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_contact_edit_all_fields(app, data_contacts):
-    contact = data_contacts
+def test_contact_edit_all_fields(app, json_contacts):
+    contact = json_contacts
     app.contact.check(Contact(firstname="", middlename="", lastname="", nickname="", title="", company="",
                               address="", home="", mobile="", work="", fax="", email1="", email2="", email3="",
                               homepage="", bday="", bmonth="-", byear="", aday="", amonth="-", ayear="", address2="",

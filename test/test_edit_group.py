@@ -1,11 +1,9 @@
 from model.group import Group
 from random import randrange
-from data.groups import testdata
-import pytest
 
 
-def test_group_edit(app, data_groups):
-    group = data_groups
+def test_group_edit(app, json_groups):
+    group = json_groups
     app.group.check(Group(name="name", header="header", footer="footer"))
     old_groups = app.group.get_group_list()
     index = randrange(len(old_groups))

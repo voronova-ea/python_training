@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
-from data.contacts import testdata
-import pytest
 
 
-def test_contact_add(app, data_contacts):
-    contact = data_contacts
+def test_contact_add(app, json_contacts):
+    contact = json_contacts
     old_contacts = app.contact.get_contact_list()
     app.contact.create(contact)
     assert len(old_contacts) + 1 == app.contact.count()

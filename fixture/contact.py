@@ -194,7 +194,7 @@ class ContactHelper:
         return re.sub("[() -]", "", s)
 
     def remove_end_or_begin_spaces(self, s):
-        return re.sub('^[ \t]+|[ \t]+$', "", s)
+        return re.sub('[ \t]+', " ", re.sub('^[ \t]+|[ \t]+$', "", s))
 
     def merge_phones_like_on_home_page(self, contact):
         return "\n".join(filter(lambda x: x != "",

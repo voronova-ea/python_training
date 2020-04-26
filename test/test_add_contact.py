@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
-from data.add_contact import constant as testdata
+from data.contact import constant as testdata
 import pytest
 
 

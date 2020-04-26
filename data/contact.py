@@ -42,4 +42,7 @@ testdata = [Contact(firstname="", middlename="", lastname="", nickname="", title
                     amonth=str(months[random.randrange(len(months))]), ayear=str(random.randrange(3000)),
                     address2=random_string("address2", 30), phone2=random_number(11),
                     notes=random_string("notes", 30))
-            for _ in range(5)]
+            for _ in range(5)] + \
+           [Contact(firstname=random_string("firstname", 10))] + \
+           [Contact(lastname=random_string("lastname", 15))] + \
+           [Contact(address=random_string("address", 30))]

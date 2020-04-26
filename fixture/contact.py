@@ -16,7 +16,7 @@ class ContactHelper:
 
     def change_selected_value(self, field_name, text):
         wd = self.app.wd
-        if text is not None:
+        if text is not None and text != '':
             wd.find_element_by_name(field_name).click()
             Select(wd.find_element_by_name(field_name)).select_by_visible_text(text)
 

@@ -1,11 +1,9 @@
-from data.contact import constant as testdata
 from model.contact import Contact
 from random import randrange
-import pytest
 
 
-@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
-def test_contact_edit_all_fields(app, contact):
+def test_contact_edit_all_fields(app, data_contacts):
+    contact = data_contacts
     app.contact.check(Contact(firstname="", middlename="", lastname="", nickname="", title="", company="",
                               address="", home="", mobile="", work="", fax="", email1="", email2="", email3="",
                               homepage="", bday="", bmonth="-", byear="", aday="", amonth="-", ayear="", address2="",

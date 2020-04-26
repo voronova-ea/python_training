@@ -1,11 +1,11 @@
 from model.group import Group
 from random import randrange
-from data.group import testdata
+from data.groups import testdata
 import pytest
 
 
-@pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
-def test_group_edit(app, group):
+def test_group_edit(app, data_groups):
+    group = data_groups
     app.group.check(Group(name="name", header="header", footer="footer"))
     old_groups = app.group.get_group_list()
     index = randrange(len(old_groups))

@@ -1,47 +1,18 @@
 from model.group import Group
 from random import randrange
+from data.group import constant as testdata
+import pytest
 
 
-def test_group_edit_all_fields(app):
+@pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
+def test_group_edit(app, group):
     app.group.check(Group(name="name", header="header", footer="footer"))
     old_groups = app.group.get_group_list()
     index = randrange(len(old_groups))
-    group = Group(name="new name", header="new header", footer="new footer")
     group.id = old_groups[index].id
     app.group.edit_group_by_index(index, group)
     assert len(old_groups) == app.group.count()
     new_groups = app.group.get_group_list()
     old_groups[index] = group
-    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
-
-
-def test_group_edit_all_fields_empty(app):
-    app.group.check(Group(name="name", header="header", footer="footer"))
-    old_groups = app.group.get_group_list()
-    app.group.edit_first_group(Group(name="", header="", footer=""))
-    new_groups = app.group.get_group_list()
-    assert len(old_groups) == len(new_groups)
-
-
-def test_group_edit_name(app):
-    app.group.check(Group(name="test"))
-    old_groups = app.group.get_group_list()
-    app.group.edit_first_group(Group(name="new name"))
-    new_groups = app.group.get_group_list()
-    assert len(old_groups) == len(new_groups)
-
-
-def test_group_edit_header(app):
-    app.group.check(Group(header=""))
-    old_groups = app.group.get_group_list()
-    app.group.edit_first_group(Group(header="new header"))
-    new_groups = app.group.get_group_list()
-    assert len(old_groups) == len(new_groups)
-
-
-def test_group_edit_footer(app):
-    app.group.check(Group(footer="test"))
-    old_groups = app.group.get_group_list()
-    app.group.edit_first_group(Group(footer="new footer"))
-    new_groups = app.group.get_group_list()
-    assert len(old_groups) == len(new_groups)
+    if group.name is not None:
+        assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)

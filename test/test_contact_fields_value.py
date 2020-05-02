@@ -2,8 +2,8 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_contact_fields_value_on_home_page(app):
-    app.contact.check(Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
+def test_contact_fields_value_on_home_page(app, db):
+    app.contact.check(db, Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
                               title="Some", company="NPS", address="Springfield", home="027220", mobile="567890",
                               work="026789", fax="026790", email1="h.simpson@gmail.com",
                               email2="h.simpson@somemail.com",

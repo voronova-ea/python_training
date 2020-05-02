@@ -2,8 +2,8 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_phones_on_home_page(app):
-    app.contact.check(Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
+def test_phones_on_home_page(app, db):
+    app.contact.check(db, Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
                               title="Some", company="NPS", address="Springfield", home="027220", mobile="567890",
                               work="026789", fax="026790", email1="h.simpson@gmail.com",
                               email2="h.simpson@somemail.com",
@@ -18,8 +18,8 @@ def test_phones_on_home_page(app):
     assert contact_from_home_page.all_phones_from_home_page == app.contact.merge_phones_like_on_home_page(contact_from_edit_page)
 
 
-def test_phones_on_view_page(app):
-    app.contact.check(Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
+def test_phones_on_view_page(app, db):
+    app.contact.check(db, Contact(firstname="Homer", middlename="Jay", lastname="Simpson", nickname="Hommy",
                               title="Some", company="NPS", address="Springfield", home="027220", mobile="567890",
                               work="026789", fax="026790", email1="h.simpson@gmail.com",
                               email2="h.simpson@somemail.com",

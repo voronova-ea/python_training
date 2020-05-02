@@ -104,6 +104,9 @@ class GroupHelper:
         if len(db.get_group_list()) == 0:
             self.create(group)
 
+    def clean_spaces(self, group):
+        return Group(id=group.id, name=group.name.strip() if group.name is not None else group.name)
+
     group_cache = None
 
     def get_group_list(self):

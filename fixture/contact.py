@@ -234,6 +234,11 @@ class ContactHelper:
     def remove_end_or_begin_spaces(self, s):
         return re.sub('[ \t]+', " ", re.sub('^[ \t]+|[ \t]+$', "", s))
 
+    def clean_spaces(self, contact):
+        return Contact(id=contact.id,
+                       firstname=contact.firstname.strip() if contact.firstname is not None else contact.firstname,
+                       lastname=contact.lastname.strip() if contact.lastname is not None else contact.lastname)
+
     def merge_phones_like_on_home_page(self, contact):
         return "\n".join(filter(lambda x: x != "",
                                 map(lambda x: self.clear(x),

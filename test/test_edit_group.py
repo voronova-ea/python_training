@@ -1,15 +1,15 @@
 from model.group import Group
-from random import randrange
+import random
 
 
-def test_group_edit(app, json_groups):
-    group = json_groups
-    app.group.check(Group(name="name", header="header", footer="footer"))
-    old_groups = app.group.get_group_list()
-    index = randrange(len(old_groups))
-    group.id = old_groups[index].id
-    app.group.edit_group_by_index(index, group)
-    assert len(old_groups) == app.group.count()
-    new_groups = app.group.get_group_list()
-    old_groups[index] = group
+def test_group_edit(app, db, json_groups):
+    group_data = json_groups
+    app.group.check(db, Group(name="name", header="header", footer="footer"))
+    old_groups = db.get_group_list()
+    group = random.choice(old_groups)
+    group_data.id = group.id
+    app.group.edit_group_by_id(group.id, group_data)
+    new_groups = db.get_group_list()
+    old_groups.remove(group)
+    old_groups.append(group_data)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)

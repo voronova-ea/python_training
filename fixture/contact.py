@@ -70,12 +70,29 @@ class ContactHelper:
         cell = row.find_elements_by_tag_name("td")[7]
         cell.find_element_by_tag_name("a").click()
 
+    def open_contact_edit_form_by_id(self, id):
+        wd = self.app.wd
+        self.app.navigation.open_home_page_by_button()
+        row = wd.find_element_by_xpath("//input[@value='%s']//parent::td//parent::tr" % id)
+        cell = row.find_elements_by_tag_name("td")[7]
+        cell.find_element_by_tag_name("a").click()
+
     def edit_first_contact(self, contact):
         self.edit_contact_by_index(0, contact)
 
     def edit_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.open_contact_edit_form_by_index(index)
+        self.fill_form(contact)
+        # Submit contact editing
+        wd.find_element_by_xpath("(//input[@value='Update'])").click()
+        # return to home page
+        self.app.navigation.return_to_home_page()
+        self.contact_cache = None
+
+    def edit_contact_by_id(self, id, contact):
+        wd = self.app.wd
+        self.open_contact_edit_form_by_id(id)
         self.fill_form(contact)
         # Submit contact editing
         wd.find_element_by_xpath("(//input[@value='Update'])").click()
@@ -106,6 +123,19 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@class='msgbox']")
         self.contact_cache = None
 
+    def delete_by_id_from_main_page(self, id):
+        wd = self.app.wd
+        self.app.navigation.open_home_page_by_button()
+        # select first contact
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        # init deletion
+        wd.find_element_by_xpath("(//input[@value='Delete'])").click()
+        # submit deletion
+        wd.switch_to_alert().accept()
+        # wait message about deletion
+        wd.find_element_by_xpath("//div[@class='msgbox']")
+        self.contact_cache = None
+
     def delete_first_contact_from_edit_form(self):
         self.delete_by_index_from_edit_form(0)
 
@@ -117,13 +147,21 @@ class ContactHelper:
         wd.find_element_by_xpath("(//input[@value='Delete'])").click()
         self.contact_cache = None
 
+    def delete_by_id_from_edit_form(self, id):
+        wd = self.app.wd
+        self.app.navigation.open_home_page_by_button()
+        self.open_contact_edit_form_by_id(id)
+        # submit deletion from edit form
+        wd.find_element_by_xpath("(//input[@value='Delete'])").click()
+        self.contact_cache = None
+
     def count(self):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
         return len(wd.find_elements_by_name("selected[]"))
 
-    def check(self, contact):
-        if self.count() == 0:
+    def check(self, db, contact):
+        if len(db.get_contact_list()) == 0:
             self.create(contact)
 
     contact_cache = None

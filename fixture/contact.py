@@ -250,10 +250,3 @@ class ContactHelper:
                                 map(lambda x: self.remove_end_or_begin_spaces(x),
                                     filter(lambda x: x is not None,
                                            [contact.email1, contact.email2, contact.email3]))))
-
-    def clean_spaces(self, contact):
-        return Contact(id=contact.id,
-                       firstname=contact.firstname.strip() if contact.firstname is not None else contact.firstname,
-                       lastname=contact.lastname.strip() if contact.lastname is not None else contact.lastname,
-                       all_emails_from_home_page=contact.all_emails_from_home_page,
-                       all_phones_from_home_page=contact.all_phones_from_home_page)

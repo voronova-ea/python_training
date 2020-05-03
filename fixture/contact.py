@@ -63,6 +63,21 @@ class ContactHelper:
         self.app.navigation.return_to_home_page()
         self.contact_cache = None
 
+    def create_and_add_to_group(self, contact, group_id):
+        wd = self.app.wd
+        self.app.navigation.open_home_page_by_button()
+        # Init contact creation
+        wd.find_element_by_link_text("add new").click()
+        self.fill_form(contact)
+        # add contact in group
+        wd.find_element_by_name("new_group").click()
+        Select(wd.find_element_by_name("new_group")).select_by_value(group_id)
+        # Submit contact creation
+        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        # return to home page
+        self.app.navigation.return_to_home_page()
+        self.contact_cache = None
+
     def open_contact_edit_form_by_index(self, index):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
@@ -113,7 +128,7 @@ class ContactHelper:
     def delete_by_index_from_main_page(self, index):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
-        # select first contact
+        # select contact
         wd.find_elements_by_name("selected[]")[index].click()
         # init deletion
         wd.find_element_by_xpath("(//input[@value='Delete'])").click()
@@ -126,7 +141,7 @@ class ContactHelper:
     def delete_by_id_from_main_page(self, id):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
-        # select first contact
+        # select contact
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
         # init deletion
         wd.find_element_by_xpath("(//input[@value='Delete'])").click()
@@ -256,3 +271,17 @@ class ContactHelper:
                                 map(lambda x: self.remove_end_or_begin_spaces(x),
                                     filter(lambda x: x is not None,
                                            [contact.email1, contact.email2, contact.email3]))))
+
+    def add_contact_to_group(self, contact_id, group):
+        wd = self.app.wd
+        self.app.navigation.open_home_page_by_button()
+        # select contact
+        wd.find_element_by_css_selector("input[value='%s']" % contact_id).click()
+        # select group
+        wd.find_element_by_name("to_group").click()
+        Select(wd.find_element_by_name("to_group")).select_by_value(group.id)
+        # add to group
+        wd.find_element_by_xpath("(//input[@value='Add to'])").click()
+        # return to group page
+        wd.find_element_by_link_text('group page \"%s\"' % group.name).click()
+        self.contact_cache = None

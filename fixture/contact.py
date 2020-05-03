@@ -237,7 +237,8 @@ class ContactHelper:
         return re.sub("[() -]", "", s)
 
     def remove_end_or_begin_spaces(self, s):
-        return re.sub('[ \t]+', " ", re.sub('^[ \t]+|[ \t]+$', "", s))
+        if s is not None:
+            return re.sub('[ \t]+', " ", re.sub('^[ \t]+|[ \t]+$', "", s))
 
     def clean_spaces(self, contact):
         return Contact(id=contact.id,

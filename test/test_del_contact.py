@@ -10,6 +10,7 @@ def test_delete_first_contact_from_main_page(app, db, check_ui):
     new_contacts = db.get_contact_list()
     old_contacts.remove(contact)
     assert old_contacts == new_contacts
+
     if check_ui:
         assert sorted(map(app.contact.clean_spaces, db.get_contact_list()), key=Contact.id_or_max) == \
                sorted(app.contact.get_contact_list(), key=Contact.id_or_max)
@@ -26,6 +27,7 @@ def test_delete_first_contact_from_edit_form(app, db, check_ui):
     new_contacts = db.get_contact_list()
     old_contacts.remove(contact)
     assert old_contacts == new_contacts
+
     if check_ui:
         assert sorted(map(app.contact.clean_spaces, db.get_contact_list()), key=Contact.id_or_max) == \
                sorted(app.contact.get_contact_list(), key=Contact.id_or_max)

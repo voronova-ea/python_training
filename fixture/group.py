@@ -104,6 +104,11 @@ class GroupHelper:
         if len(db.get_group_list()) == 0:
             self.create(group)
 
+    def ui_check(self, db, check_ui):
+        if check_ui:
+            assert sorted(map(self.clean_spaces, db.get_group_list()), key=Group.id_or_max) == \
+               sorted(self.get_group_list(), key=Group.id_or_max)
+
     def clean_spaces(self, group):
         return Group(id=group.id, name=group.name.strip() if group.name is not None else group.name)
 

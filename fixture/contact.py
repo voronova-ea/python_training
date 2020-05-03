@@ -164,6 +164,11 @@ class ContactHelper:
         if len(db.get_contact_list()) == 0:
             self.create(contact)
 
+    def ui_check(self, db, check_ui):
+        if check_ui:
+            assert sorted(map(self.clean_spaces, db.get_contact_list()), key=Contact.id_or_max) == \
+                   sorted(self.get_contact_list(), key=Contact.id_or_max)
+
     contact_cache = None
 
     def get_contact_list(self):

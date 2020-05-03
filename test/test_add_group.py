@@ -9,7 +9,5 @@ def test_group_add(app, db, json_groups, check_ui):
     new_groups = db.get_group_list()
     old_groups.append(group)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
-
-    if check_ui:
-        assert sorted(map(app.group.clean_spaces, db.get_group_list()), key=Group.id_or_max) == \
-               sorted(app.group.get_group_list(), key=Group.id_or_max)
+    # опциональная проверка, если при запуске указан check_ui
+    app.group.ui_check(db, check_ui)

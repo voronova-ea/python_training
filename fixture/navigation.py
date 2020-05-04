@@ -1,3 +1,6 @@
+from selenium.webdriver.support.ui import Select
+
+
 class NavigationHelper:
     def __init__(self, app):
         self.app = app
@@ -15,3 +18,13 @@ class NavigationHelper:
     def return_to_home_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
+
+    def open_group_contact_page(self, group):
+        wd = self.app.wd
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_value(group.id)
+        wd.find_element_by_xpath("//input[@name='remove']")
+
+    def return_to_group_contact_page(self, group):
+        wd = self.app.wd
+        wd.find_element_by_link_text('group page \"%s\"' % group.name).click()

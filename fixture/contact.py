@@ -20,9 +20,15 @@ class ContactHelper:
             wd.find_element_by_name(field_name).click()
             Select(wd.find_element_by_name(field_name)).select_by_visible_text(text)
 
+    def change_group_value(self, field_name, id):
+        wd = self.app.wd
+        if id is not None:
+            wd.find_element_by_name(field_name).click()
+            Select(wd.find_element_by_name(field_name)).select_by_value(id)
+
     def fill_form(self, contact):
         wd = self.app.wd
-        # Fill main fields in contact form
+        # fill main fields in contact form
         self.change_field_value("firstname", contact.firstname)
         self.change_field_value("middlename", contact.middlename)
         self.change_field_value("lastname", contact.lastname)
@@ -38,41 +44,28 @@ class ContactHelper:
         self.change_field_value("email2", contact.email2)
         self.change_field_value("email3", contact.email3)
         self.change_field_value("homepage", contact.homepage)
-        # Select day, month and year of birth
+        # select day, month and year of birth
         self.change_selected_value("bday", contact.bday)
         self.change_selected_value("bmonth", contact.bmonth)
         self.change_field_value("byear", contact.byear)
-        # Select day, month and year of anniversary
+        # select day, month and year of anniversary
         self.change_selected_value("aday", contact.aday)
         self.change_selected_value("amonth", contact.amonth)
         self.change_field_value("ayear", contact.ayear)
-        # Fill secondary information
+        # fill secondary information
         self.change_field_value("address2", contact.address2)
         self.change_field_value("phone2", contact.phone2)
         self.change_field_value("notes", contact.notes)
 
-    def create(self, contact):
+    def create(self, contact, group_id=None):
         wd = self.app.wd
         self.app.navigation.open_home_page_by_button()
-        # Init contact creation
-        wd.find_element_by_link_text("add new").click()
-        self.fill_form(contact)
-        # Submit contact creation
-        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
-        # return to home page
-        self.app.navigation.return_to_home_page()
-        self.contact_cache = None
-
-    def create_and_add_to_group(self, contact, group_id):
-        wd = self.app.wd
-        self.app.navigation.open_home_page_by_button()
-        # Init contact creation
+        # init contact creation
         wd.find_element_by_link_text("add new").click()
         self.fill_form(contact)
         # add contact in group
-        wd.find_element_by_name("new_group").click()
-        Select(wd.find_element_by_name("new_group")).select_by_value(group_id)
-        # Submit contact creation
+        self.change_group_value("new_group", group_id)
+        # submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         # return to home page
         self.app.navigation.return_to_home_page()
@@ -99,7 +92,7 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contact_edit_form_by_index(index)
         self.fill_form(contact)
-        # Submit contact editing
+        # submit contact editing
         wd.find_element_by_xpath("(//input[@value='Update'])").click()
         # return to home page
         self.app.navigation.return_to_home_page()
@@ -109,7 +102,7 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contact_edit_form_by_id(id)
         self.fill_form(contact)
-        # Submit contact editing
+        # submit contact editing
         wd.find_element_by_xpath("(//input[@value='Update'])").click()
         # return to home page
         self.app.navigation.return_to_home_page()

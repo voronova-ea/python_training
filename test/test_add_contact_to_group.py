@@ -8,7 +8,7 @@ def test_create_contact_with_adding_to_group(app, orm, data_contacts):
     contact = data_contacts
     group = random.choice(orm.get_group_list())
     old_list_contacts_in_group = orm.get_contacts_in_group(group)
-    app.contact.create_and_add_to_group(contact, group.id)
+    app.contact.create(contact, group.id)
     new_list_contacts_in_group = orm.get_contacts_in_group(group)
     old_list_contacts_in_group.append(contact)
     assert sorted(old_list_contacts_in_group, key=Contact.id_or_max) == sorted(new_list_contacts_in_group, key=Contact.id_or_max)

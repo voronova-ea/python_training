@@ -186,32 +186,6 @@ class ContactHelper:
         if len(orm.get_contacts_not_in_any_groups()) == 0:
             self.create(contact)
 
-    def check_group_with_contact(self, orm, group, contact):
-        if len(orm.get_groups_with_contact()) == 0:
-            # check if at least one group exists else create
-            self.app.group.check(orm, group)
-            # check if at least one contact is not in groups else create
-            self.check_contacts_not_in_groups(orm, contact)
-            # select group
-            group = random.choice(orm.get_group_list())
-            # select contact not in groups
-            contact = random.choice(orm.get_contacts_not_in_any_groups())
-            # add contact in group
-            self.add_contact_to_group(contact.id, group)
-
-    def check_contacts_in_any_groups(self, orm, contact, group):
-        if len(orm.get_contacts_in_any_groups()) == 0:
-            # check if at least one contact is not in groups else create
-            self.check_contacts_not_in_groups(orm, contact)
-            # check if at least one group exists else create
-            self.app.group.check(orm, group)
-            # select contact not in groups
-            contact = random.choice(orm.get_contacts_not_in_any_groups())
-            # select group
-            group = random.choice(orm.get_group_list())
-            # add contact in group
-            self.add_contact_to_group(contact.id, group)
-
     contact_cache = None
 
     def get_list(self):

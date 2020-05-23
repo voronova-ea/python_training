@@ -21,8 +21,6 @@ class Application:
         self.contact = ContactHelper(self)
         self.navigation = NavigationHelper(self)
         self.base_url = base_url
-#        self.username = username
-#        self.password = password
 
     def is_valid(self):
         try:

@@ -1,0 +1,174 @@
+{
+  "uid" : "44ae241d3b3c94ff",
+  "name" : "test_group_add[None: ; headerD |TVm60I1$w; footerDC/@B0]",
+  "fullName" : "test.test_add_group#test_group_add",
+  "historyId" : "9062c7e75beeb93683ac610186e4d669",
+  "time" : {
+    "start" : 1590320754378,
+    "stop" : 1590320755333,
+    "duration" : 955
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1590320754378,
+      "stop" : 1590320754378,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1590320739541,
+      "stop" : 1590320739557,
+      "duration" : 16
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1590320739541,
+      "stop" : 1590320739541,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1590320754331,
+      "stop" : 1590320754378,
+      "duration" : 47
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1590320766493,
+      "stop" : 1590320766493,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1590320766493,
+      "stop" : 1590320767248,
+      "duration" : 755
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_group"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-J8DMQPF"
+  }, {
+    "name" : "thread",
+    "value" : "25652-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_groups",
+    "value" : "None: ; headerD |TVm60I1$w; footerDC/@B0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "9e9fef27d99252fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319681367,
+        "stop" : 1590319682346,
+        "duration" : 979
+      }
+    } ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "64ed8cb51439472a",
+        "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/64ed8cb51439472a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1590319681367,
+          "stop" : 1590319682346,
+          "duration" : 979
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "44ae241d3b3c94ff.json",
+  "parameterValues" : [ "None: ; headerD |TVm60I1$w; footerDC/@B0" ]
+}

@@ -1,0 +1,15 @@
+[ {
+  "buildOrder" : 21,
+  "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "duration" : 15637
+  }
+}, {
+  "buildOrder" : 20,
+  "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "duration" : 161416
+  }
+} ]

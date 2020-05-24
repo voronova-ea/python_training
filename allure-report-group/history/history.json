@@ -1,0 +1,626 @@
+{
+  "e7bf30bdbef4eb59d4eacd67f7593c3b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "79425f87edb0004",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/79425f87edb0004",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320755364,
+        "stop" : 1590320756365,
+        "duration" : 1001
+      }
+    }, {
+      "uid" : "74607a357e6df45c",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/74607a357e6df45c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319682382,
+        "stop" : 1590319683341,
+        "duration" : 959
+      }
+    } ]
+  },
+  "e2e8b923d362f858313a327eb8fe3314" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "60f7e8e0e96cbf5",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/60f7e8e0e96cbf5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319826239,
+        "stop" : 1590319834476,
+        "duration" : 8237
+      }
+    } ]
+  },
+  "b0e373f533c0a80d80b8a9c4b1b75c6a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "9bd92b4343b10fb9",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/9bd92b4343b10fb9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320757370,
+        "stop" : 1590320758373,
+        "duration" : 1003
+      }
+    }, {
+      "uid" : "59dcc94eb7b3b6cc",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/59dcc94eb7b3b6cc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319684389,
+        "stop" : 1590319685404,
+        "duration" : 1015
+      }
+    } ]
+  },
+  "315de38585ccb0b9b6112366e0c1ace9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "ec5b865b0a5948e0",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/ec5b865b0a5948e0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320750856,
+        "stop" : 1590320752113,
+        "duration" : 1257
+      }
+    }, {
+      "uid" : "ec87870484e0f1f3",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/ec87870484e0f1f3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319677991,
+        "stop" : 1590319679178,
+        "duration" : 1187
+      }
+    } ]
+  },
+  "656e363aba1cff6ebdf83da778c7b906" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "db09c72d8be4749b",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/db09c72d8be4749b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320759408,
+        "stop" : 1590320760395,
+        "duration" : 987
+      }
+    }, {
+      "uid" : "10b79297cf9afb18",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/10b79297cf9afb18",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319686615,
+        "stop" : 1590319687704,
+        "duration" : 1089
+      }
+    } ]
+  },
+  "91089b928ea9bcb726cdc8acbb6e8cdd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "7ee8bdf35b267afe",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/7ee8bdf35b267afe",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320765305,
+        "stop" : 1590320765880,
+        "duration" : 575
+      }
+    }, {
+      "uid" : "28428c9a93e093f2",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/28428c9a93e093f2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319692572,
+        "stop" : 1590319693193,
+        "duration" : 621
+      }
+    } ]
+  },
+  "5ce28599cb55fea0453f96d64d9f9ee0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e7387d17c0ab6def",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/e7387d17c0ab6def",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319807434,
+        "stop" : 1590319815750,
+        "duration" : 8316
+      }
+    } ]
+  },
+  "36fd194b6dad49cc3e21c96ea43a86d2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4ab152fe5b954514",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/4ab152fe5b954514",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319788283,
+        "stop" : 1590319796713,
+        "duration" : 8430
+      }
+    } ]
+  },
+  "c274f1f25786c3259818ca3330727811" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2af27b7f06c5be28",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/2af27b7f06c5be28",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319797735,
+        "stop" : 1590319806400,
+        "duration" : 8665
+      }
+    } ]
+  },
+  "7b905c18e14740c20a3864f211cebbd2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "6ad37575354a5088",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/6ad37575354a5088",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320753259,
+        "stop" : 1590320754331,
+        "duration" : 1072
+      }
+    }, {
+      "uid" : "32cdea31ecf40598",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/32cdea31ecf40598",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319680296,
+        "stop" : 1590319681328,
+        "duration" : 1032
+      }
+    } ]
+  },
+  "b1169c642b89bac66d417ef3d3a19422" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "522d5882619b4b99",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/522d5882619b4b99",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320761589,
+        "stop" : 1590320762587,
+        "duration" : 998
+      }
+    }, {
+      "uid" : "bb010f75946f52d",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/bb010f75946f52d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319688853,
+        "stop" : 1590319689854,
+        "duration" : 1001
+      }
+    } ]
+  },
+  "9062c7e75beeb93683ac610186e4d669" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "44ae241d3b3c94ff",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/44ae241d3b3c94ff",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320754378,
+        "stop" : 1590320755333,
+        "duration" : 955
+      }
+    }, {
+      "uid" : "64ed8cb51439472a",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/64ed8cb51439472a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319681367,
+        "stop" : 1590319682346,
+        "duration" : 979
+      }
+    } ]
+  },
+  "458e12f961304f5b2d8a6fff54b2ee4f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "79e665bd6d64a707",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/79e665bd6d64a707",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320764726,
+        "stop" : 1590320765274,
+        "duration" : 548
+      }
+    }, {
+      "uid" : "f2a21434e237ab46",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/f2a21434e237ab46",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319691976,
+        "stop" : 1590319692540,
+        "duration" : 564
+      }
+    } ]
+  },
+  "630250ccc0beb868f90e1b9cdf230dee" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "496a363f997d8d83",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/496a363f997d8d83",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320752165,
+        "stop" : 1590320753228,
+        "duration" : 1063
+      }
+    }, {
+      "uid" : "5e1d96cd747b3728",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/5e1d96cd747b3728",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319679218,
+        "stop" : 1590319680258,
+        "duration" : 1040
+      }
+    } ]
+  },
+  "029373b82bdad09166410db5a51aad4a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "cb3927ccc199bf7",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/cb3927ccc199bf7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319835511,
+        "stop" : 1590319836931,
+        "duration" : 1420
+      }
+    } ]
+  },
+  "c7c0b4310c02ae23a6446edf0ad41e97" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "81cdcd12447f9d3a",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/81cdcd12447f9d3a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320760427,
+        "stop" : 1590320761547,
+        "duration" : 1120
+      }
+    }, {
+      "uid" : "dd6c0bf8f6af71fb",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/dd6c0bf8f6af71fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319687744,
+        "stop" : 1590319688817,
+        "duration" : 1073
+      }
+    } ]
+  },
+  "fa6b3a3878d7a88e583f595a2e10cbf0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "5d0d2bf49a1906ed",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/5d0d2bf49a1906ed",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320762618,
+        "stop" : 1590320763609,
+        "duration" : 991
+      }
+    }, {
+      "uid" : "a41b1717a84e2170",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/a41b1717a84e2170",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319689901,
+        "stop" : 1590319690903,
+        "duration" : 1002
+      }
+    } ]
+  },
+  "90ac91360f5b6ad15134fa4ddc070546" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "24267d8a7e4f17aa",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/24267d8a7e4f17aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320756397,
+        "stop" : 1590320757332,
+        "duration" : 935
+      }
+    }, {
+      "uid" : "b8138ef67897b621",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/b8138ef67897b621",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319683378,
+        "stop" : 1590319684352,
+        "duration" : 974
+      }
+    } ]
+  },
+  "73213bc1d1fb1484d4d9170ae620a96e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "9690aee8661aad37",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/9690aee8661aad37",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320765912,
+        "stop" : 1590320766493,
+        "duration" : 581
+      }
+    }, {
+      "uid" : "f5cfefcfc8ee0d6",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/f5cfefcfc8ee0d6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319693223,
+        "stop" : 1590319693785,
+        "duration" : 562
+      }
+    } ]
+  },
+  "2956a2e05ddffe7466be07be748caa6a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f4cfbdb4b3896534",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/f4cfbdb4b3896534",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319816757,
+        "stop" : 1590319825204,
+        "duration" : 8447
+      }
+    } ]
+  },
+  "4ba2efdd075900ced177c7bbcec3393d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5d4f8dee68fc4cfe",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/5d4f8dee68fc4cfe",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319838039,
+        "stop" : 1590319839407,
+        "duration" : 1368
+      }
+    } ]
+  },
+  "18cbed070d566349692260b27bc1515e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "5430b6327ce5ac00",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/5430b6327ce5ac00",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320758404,
+        "stop" : 1590320759361,
+        "duration" : 957
+      }
+    }, {
+      "uid" : "b40e5130c3b5e65c",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/b40e5130c3b5e65c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319685435,
+        "stop" : 1590319686575,
+        "duration" : 1140
+      }
+    } ]
+  },
+  "83ab883e3cb31d1c54560e1b2052a9be" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "items" : [ {
+      "uid" : "7cc276412f9b364e",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/21/allure/#testresult/7cc276412f9b364e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590320763645,
+        "stop" : 1590320764690,
+        "duration" : 1045
+      }
+    }, {
+      "uid" : "83b891aa5e9dd884",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/83b891aa5e9dd884",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319690937,
+        "stop" : 1590319691941,
+        "duration" : 1004
+      }
+    } ]
+  },
+  "dcc3f58e58335538425be407505eae4c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c25b8b574d290de3",
+      "reportUrl" : "http://localhost:8080/job/addressbook%20tests/20/allure/#testresult/c25b8b574d290de3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590319780459,
+        "stop" : 1590319787283,
+        "duration" : 6824
+      }
+    } ]
+  }
+}

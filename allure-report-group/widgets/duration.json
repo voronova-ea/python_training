@@ -1,0 +1,161 @@
+[ {
+  "uid" : "db09c72d8be4749b",
+  "name" : "test_group_add[None: name_e!; header-JXZS-%Z.?; footerfOl0v! C5:osqi+J(|]",
+  "time" : {
+    "start" : 1590320759408,
+    "stop" : 1590320760395,
+    "duration" : 987
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "79e665bd6d64a707",
+  "name" : "test_group_add[None: name0/; None; None]",
+  "time" : {
+    "start" : 1590320764726,
+    "stop" : 1590320765274,
+    "duration" : 548
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "81cdcd12447f9d3a",
+  "name" : "test_group_add[None: name5e[A rx; headerEX ^ qrj+7VCb9 ; footert8ETuL]",
+  "time" : {
+    "start" : 1590320760427,
+    "stop" : 1590320761547,
+    "duration" : 1120
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec5b865b0a5948e0",
+  "name" : "test_group_add[None: ; ; ]",
+  "time" : {
+    "start" : 1590320750856,
+    "stop" : 1590320752113,
+    "duration" : 1257
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "24267d8a7e4f17aa",
+  "name" : "test_group_add[None: nameI.b; ; footerC@PcwsVnZ]",
+  "time" : {
+    "start" : 1590320756397,
+    "stop" : 1590320757332,
+    "duration" : 935
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9bd92b4343b10fb9",
+  "name" : "test_group_add[None: nameI.b; header% \"F2-1j7]; ]",
+  "time" : {
+    "start" : 1590320757370,
+    "stop" : 1590320758373,
+    "duration" : 1003
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5d0d2bf49a1906ed",
+  "name" : "test_group_add[None: name%E,|.IwI; headerY-9{ Cx.; footerl[)W{]",
+  "time" : {
+    "start" : 1590320762618,
+    "stop" : 1590320763609,
+    "duration" : 991
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9690aee8661aad37",
+  "name" : "test_group_add[None: None; None; footer N8]",
+  "time" : {
+    "start" : 1590320765912,
+    "stop" : 1590320766493,
+    "duration" : 581
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7cc276412f9b364e",
+  "name" : "test_group_add[None: name; header,eFJ Zv; footern[LsDDt5c|+^]",
+  "time" : {
+    "start" : 1590320763645,
+    "stop" : 1590320764690,
+    "duration" : 1045
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5430b6327ce5ac00",
+  "name" : "test_group_add[None: nameI.b; header% \"F2-1j7]; footer.2O\"@BIu4]",
+  "time" : {
+    "start" : 1590320758404,
+    "stop" : 1590320759361,
+    "duration" : 957
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "44ae241d3b3c94ff",
+  "name" : "test_group_add[None: ; headerD |TVm60I1$w; footerDC/@B0]",
+  "time" : {
+    "start" : 1590320754378,
+    "stop" : 1590320755333,
+    "duration" : 955
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "522d5882619b4b99",
+  "name" : "test_group_add[None: name&|_Oqs; headerF T; footerV K1D c .^e ?,]",
+  "time" : {
+    "start" : 1590320761589,
+    "stop" : 1590320762587,
+    "duration" : 998
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7ee8bdf35b267afe",
+  "name" : "test_group_add[None: None; header6pB,; None]",
+  "time" : {
+    "start" : 1590320765305,
+    "stop" : 1590320765880,
+    "duration" : 575
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6ad37575354a5088",
+  "name" : "test_group_add[None: ; headerD |TVm60I1$w; ]",
+  "time" : {
+    "start" : 1590320753259,
+    "stop" : 1590320754331,
+    "duration" : 1072
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "496a363f997d8d83",
+  "name" : "test_group_add[None: ; ; footer^]&VLqp/V)!~ jZiE]",
+  "time" : {
+    "start" : 1590320752165,
+    "stop" : 1590320753228,
+    "duration" : 1063
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "79425f87edb0004",
+  "name" : "test_group_add[None: nameI.b; ; ]",
+  "time" : {
+    "start" : 1590320755364,
+    "stop" : 1590320756365,
+    "duration" : 1001
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
